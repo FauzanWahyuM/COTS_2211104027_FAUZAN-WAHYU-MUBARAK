@@ -80,38 +80,76 @@ class OnboardingPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Get.toNamed('/login');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: Size(double.infinity, 48),
-                  ),
-                  child: Text('Masuk',
+                // Tombol Masuk
+                SizedBox(
+                  width: double.infinity,
+                  height: 48,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Get.toNamed('/login');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    child: Text(
+                      'Masuk',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold)),
-                ),
-                SizedBox(height: 8),
-                OutlinedButton(
-                  onPressed: () {
-                    Get.toNamed('/register');
-                  },
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: ColorCollection.Green1, width: 2),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    minimumSize: Size(double.infinity, 48),
                   ),
-                  child: Text(
-                    "Belum ada akun? Daftar dulu",
-                    style: TextStyle(
-                      color: ColorCollection.primaryColor1,
-                      fontWeight: FontWeight.bold,
+                ),
+
+                SizedBox(height: 8),
+
+                // Tombol Daftar
+                SizedBox(
+                  width: double.infinity,
+                  height: 48,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Get.toNamed('/register');
+                    },
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.green, width: 2),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
                     ),
+                    child: Text(
+                      'Belum ada akun?, Daftar dulu',
+                      style: TextStyle(
+                        color: Colors.green,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 16),
+
+                // Ketentuan Layanan
+                Text(
+                  'Dengan masuk atau mendaftar, kamu menyetujui',
+                  style: TextStyle(fontSize: 12, color: Colors.black54),
+                  textAlign: TextAlign.center,
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    'Ketentuan layanan dan Kebijakan privasi',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],
