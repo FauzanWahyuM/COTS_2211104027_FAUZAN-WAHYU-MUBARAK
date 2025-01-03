@@ -34,6 +34,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  get: ^4.3.8
+  
 
 dev_dependencies:
   flutter_test:
@@ -56,16 +58,25 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - lib/modules/gojek/assets/images/slide1.png
+    - lib/modules/gojek/assets/images/slide2.png
+    - lib/modules/gojek/assets/images/slide3.png
+    - lib/modules/gojek/assets/images/gojek_logo.png
+    - lib/modules/gojek/assets/images/home1.png
+    - lib/modules/gojek/assets/images/home2.png
+    - lib/modules/gojek/assets/images/home3.png
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
+
+  # To add modules/assets to your application, add an modules/assets section, like this:
+  # modules/assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
-  # For details regarding adding assets from package dependencies, see
+  # For details regarding adding modules/assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
 
   # To add custom fonts to your application, add a fonts section here,
