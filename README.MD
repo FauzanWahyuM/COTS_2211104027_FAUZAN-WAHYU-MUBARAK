@@ -6,7 +6,7 @@
 
 Berikut adalah hasil dari COTS, yang sudah saya kerjakan :
 
-- Homepage :
+- Homepage/Main Page :
 ![Hasil_SS](/Dokumentasi%20Hasil/Homepage.jpg)
 
 - Login :
