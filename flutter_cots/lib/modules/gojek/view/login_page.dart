@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
+  // Declare the phone controller
+  final TextEditingController phoneController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,92 +28,126 @@ class LoginPage extends StatelessWidget {
                   Image.asset(
                     'lib/modules/gojek/assets/images/gojek_logo.png',
                     height: 30,
-                  ), // Pastikan Anda memiliki logo
+                  ),
                 ],
               ),
               SizedBox(height: 30),
 
               // Judul dan Subjudul
               Text(
-                'Login',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                "Login",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
-              SizedBox(height: 8),
+              SizedBox(height: 10),
               Text(
-                'Enter your registered phone number to log in',
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                "Enter your registered phone number to log in",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.black54,
+                ),
               ),
               SizedBox(height: 20),
 
               // Input Nomor Telepon
               Text(
-                'Phone number*',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                "Phone number*",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
               SizedBox(height: 8),
               Row(
                 children: [
+                  // Kode Negara
                   Container(
-                    width: 70,
-                    padding: EdgeInsets.symmetric(horizontal: 8),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                    decoration: BoxDecoration(),
                     child: Row(
                       children: [
-                        Text('+62'),
-                        Icon(Icons.arrow_drop_down),
+                        Image.asset(
+                          'lib/modules/gojek/assets/images/Flags.png', // Path ikon bendera Indonesia
+                          height: 20,
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          "+62",
+                          style: TextStyle(fontSize: 16, color: Colors.black),
+                        ),
                       ],
                     ),
                   ),
-                  SizedBox(width: 8),
+                  SizedBox(width: 10),
+                  // Input Nomor Telepon
                   Expanded(
                     child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Enter your phone number',
-                        border: OutlineInputBorder(),
-                      ),
+                      controller: phoneController,
                       keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                        border: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black54),
+                        ),
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical:
+                                10.0), // Menyesuaikan jarak input dengan garis bawah
+                        suffixIcon: IconButton(
+                          icon: Icon(Icons.clear, color: Colors.black54),
+                          onPressed: () {
+                            phoneController.clear();
+                          },
+                        ),
+                        hintText: "Masukkan No Telepon",
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                        ),
+                      ),
                     ),
                   ),
                 ],
               ),
               SizedBox(height: 10),
-
-              // Teks "Issue with number?"
               GestureDetector(
                 onTap: () {
-                  // Aksi ketika ditekan
+                  // Navigasi ke halaman masalah nomor
                 },
                 child: Text(
-                  'Issue with number?',
+                  "Issue with number?",
                   style: TextStyle(
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              SizedBox(height: 30),
-
-              // Tombol Login
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
+              Spacer(),
+              // Tombol Lanjutkan
+              ElevatedButton(
+                onPressed: () {
+                  // Aksi untuk melanjutkan login
+                  Get.toNamed('/main'); // Navigasi ke halaman main
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  onPressed: () => Get.toNamed('/main'),
+                ),
+                child: Center(
                   child: Text(
-                    'Continue',
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    "Continue",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ),
+              SizedBox(height: 20),
             ],
           ),
         ),

@@ -66,6 +66,7 @@ flutter:
     - lib/modules/gojek/assets/images/home1.png
     - lib/modules/gojek/assets/images/home2.png
     - lib/modules/gojek/assets/images/home3.png
+    - lib/modules/gojek/assets/images/Flags.png
 
 
   # To add modules/assets to your application, add an modules/assets section, like this:
