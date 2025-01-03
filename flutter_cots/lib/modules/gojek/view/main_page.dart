@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cots/modules/gojek/view/order_page.dart';
+import 'package:flutter_cots/modules/gojek/view/promo_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -10,8 +12,8 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> _tabs = [
     HomeTab(),
-    Center(child: Text('Promo Page')),
-    Center(child: Text('Orders Page')),
+    PromoTab(),
+    OrderTab(),
     Center(child: Text('Chat Page')),
   ];
 
